@@ -1,0 +1,290 @@
+/* Reset e Variáveis Globais */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-black: #0f0f0f;
+      --bg-dark: #18181b;
+      --bg-card: #27272a;
+      --border-color: #3f3f46;
+      --text-white: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent-hover: #e4e4e7;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem 1rem;
+    }
+
+    /* Layout Containers */
+    header {
+      max-width: 48rem;
+      margin: 0 auto 2rem auto;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+    }
+
+    main {
+      max-width: 48rem;
+      margin: 0 auto;
+      width: 100%;
+      background-color: var(--bg-dark);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 2rem;
+      }
+      main {
+        padding: 2rem;
+      }
+    }
+
+    /* Header e Logo */
+    .brand-logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      background-color: var(--bg-dark);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-color);
+      margin-bottom: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    .brand-badge {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      border-radius: 0.5rem;
+      letter-spacing: -0.05em;
+      margin-right: 0.75rem;
+    }
+
+    .brand-text-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .brand-text-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .header-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* Formulário e Inputs */
+    .form-space {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .field-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .field-label i {
+      color: #ffffff;
+    }
+
+    select, textarea {
+      width: 100%;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 0.625rem 0.75rem;
+      font-size: 0.875rem;
+      color: #ffffff;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+
+    select:focus, textarea:focus {
+      outline: none;
+      border-color: #ffffff;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    textarea::placeholder {
+      color: #52525b;
+    }
+
+    /* Botões e Ações */
+    .actions-container {
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn-main {
+      width: 100%;
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: 700;
+      padding: 0.875rem 1.5rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-main:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-main:active {
+      transform: scale(0.98);
+    }
+
+    .btn-group-secondary {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .btn-group-secondary {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .btn-secondary {
+      width: 100%;
+      background-color: var(--bg-card);
+      color: #ffffff;
+      font-weight: 500;
+      padding: 0.625rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #27272a;
+      background-color: #3f3f46;
+    }
+
+    .btn-reset {
+      background-color: transparent;
+      color: var(--text-muted);
+    }
+
+    .btn-reset:hover {
+      background-color: #18181b;
+      color: #ffffff;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background-color: #ffffff;
+      color: #000000;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transform: translateY(5rem);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-icon {
+      color: #16a34a;
+      font-size: 1.125rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2rem;
+    }

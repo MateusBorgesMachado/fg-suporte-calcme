@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Prompt IA Max | Figueira Grande</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+  <!-- Header / Logotipo -->
+  <header>
+    <div class="brand-logo-container">
+      <div class="brand-badge">FG</div>
+      <div style="text-align: left;">
+        <h1 class="brand-text-title">Figueira Grande</h1>
+        <p class="brand-text-subtitle">Móveis e Marmoraria</p>
+      </div>
+    </div>
+    <p class="header-desc">Especificador Técnico para IA Max (Calcme)</p>
+  </header>
+
+  <!-- Container Principal -->
+  <main>
+    <form id="specForm" class="form-space">
+      
+      <div class="grid-2col">
+        
+        <!-- MDF -->
+        <div class="field-group">
+          <label class="field-label" for="mdfThickness">
+            <i class="fa-solid fa-layer-group"></i> Espessura do MDF
+          </label>
+          <select id="mdfThickness">
+            <option value="15mm">MDF 15mm (Padrão)</option>
+            <option value="18mm">MDF 18mm</option>
+            <option value="25mm">MDF 25mm</option>
+            <option value="Misto (15mm estrutura / 18mm portas)">Misto (15mm caixa / 18mm portas)</option>
+          </select>
+        </div>
+
+        <!-- Mármore / Pedra -->
+        <div class="field-group">
+          <label class="field-label" for="marbleOption">
+            <i class="fa-solid fa-gem"></i> Pedra de Mármore / Granito
+          </label>
+          <select id="marbleOption">
+            <option value="Não inclui pedra">Não inclui pedra</option>
+            <option value="Incluir Pedra">Incluir Pedra</option>
+          </select>
+        </div>
+
+        <!-- Dobradiças -->
+        <div class="field-group">
+          <label class="field-label" for="hingeType">
+            <i class="fa-solid fa-door-open"></i> Tipo de Dobradiça
+          </label>
+          <select id="hingeType">
+            <option value="Com amortecedor">Com Amortecedor</option>
+            <option value="Sem amortecedor">Sem Amortecedor</option>
+            <option value="Fecho toque">Fecho Toque</option>
+          </select>
+        </div>
+
+        <!-- Corrediças -->
+        <div class="field-group">
+          <label class="field-label" for="slideType">
+            <i class="fa-solid fa-bars"></i> Tipo de Corrediça
+          </label>
+          <select id="slideType">
+            <option value="Telescópica com Amortecedor">Telescópica c/ Amortecedor</option>
+            <option value="Telescópica Comum">Telescópica Comum</option>
+            <option value="Oculta com Amortecedor">Oculta c/ Amortecedor</option>
+            <option value="Oculta Fecho Toque">Oculta Fecho Toque</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Puxadores -->
+      <div class="field-group">
+        <label class="field-label" for="handleType">
+          <i class="fa-solid fa-grip-lines"></i> Tipo de Puxador
+        </label>
+        <select id="handleType">
+          <option value="Puxador Perfil Alumínio Cava/Cava Embutida">Perfil Alumínio</option>
+          <option value="Puxador Cava Usinada no MDF">Cava Usinada no MDF</option>
+          <option value="Puxador Sobreposto (Alça e ponto)">Puxador Sobreposto (Alça e ponto)</option>
+          <option value="Sem puxador (Sistema Fecho Toque)">Sem Puxador (Fecho Toque)</option>
+          <option value="Sem Puxador (Porta Passante)">Sem Puxador (Porta Passante)</option>
+        </select>
+      </div>
+
+      <!-- Observações -->
+      <div class="field-group">
+        <label class="field-label" for="notes">
+          <i class="fa-solid fa-pen-to-square"></i> Observações Técnicas Adicionais
+        </label>
+        <textarea id="notes" rows="3" placeholder="Ex: Cliente solicitou a troca do basculante por uma gaveta..."></textarea>
+      </div>
+
+      <!-- Ações -->
+      <div class="actions-container">
+        <button type="button" id="copyBtn" class="btn-main">
+          <i class="fa-solid fa-copy"></i>
+          <span>Copiar Prompt para o MAX</span>
+        </button>
+
+        <div class="btn-group-secondary">
+          <a href="https://app.calcme.com.br/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Abrir o Calcme</span>
+          </a>
+
+          <button type="button" id="resetBtn" class="btn-secondary btn-reset">
+            <i class="fa-solid fa-rotate-left"></i>
+            <span>Limpar Formulário</span>
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span>Prompt copiado com sucesso!</span>
+  </div>
+
+  <footer>
+    Figueira Grande — Móveis e Marmoraria &copy; 2026
+  </footer>
+
+  <script>
+
+  </script>
+  <script src="./script/script.js"></script>
+</body>
+</html>
